@@ -116,12 +116,8 @@ p.position {
     background-color: #FFFFFF;
 }
 #writeComment {
-    text-align: center;
     border-bottom: 1px solid #045FB4;
     height: 60px;
-}
-button.sendComment {
-
 }
 #allComments {
     margin-top: 20px;
@@ -146,3 +142,31 @@ button.sendComment {
     text-align: center;
     margin-top: 50px;
 }
+textarea.myComment {
+    resize: none;
+    position: relative;
+    margin-top: 0;
+    margin-left: 0;
+    margin-bottom: 0;
+    height: 60px;
+    border: none;
+    width: 70%;
+    font-size: 15px;
+}
+button.sendComment {
+    border: none;
+    background-color: #045FB4;
+    color: #ffffff;
+    transition: 1s;
+    position: absolute;
+    top: 0;
+    height: 60px;
+    width: 30%;
+    right: 0;
+}
+button.sendComment:hover {
+    background-color: #04B431;
+}
+/*
+Rating System
+*/

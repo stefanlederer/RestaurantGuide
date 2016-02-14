@@ -22,8 +22,14 @@
 
         <div id="comments">
             <div id="writeComment">
-                <textarea name="myComment" placeholder="Schreibe deinen eigen Kommentar..."></textarea>
-                <button name="sendComment" class="sendComment">Senden</button>
+                <textarea class="myComment" name="myComment" placeholder="Schreibe deinen eigenen Kommentar..."></textarea>
+                <div class="MyRating">
+
+                </div>
+                <button name="sendComment" class="sendComment">
+                    <i class="fa fa-paper-plane"></i>
+                    Senden
+                </button>
             </div>
             <div id="allComments">
                 {% for comment in comments %}
