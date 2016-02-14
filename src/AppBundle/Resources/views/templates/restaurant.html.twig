@@ -1,0 +1,40 @@
+{% extends "::base.html.twig" %}
+{% block title %}{{ features.name }}{% endblock %}
+{% block body %}
+    <div id="body">
+        <div id="information">
+            <img id="informationImage" src="{{ asset(features.image) }}">
+
+            <div id="informationLocation">
+                <p id="informationPosition">{{ features.name }}</p>
+
+                <p id="informationPosition">{{ features.street }} {{ features.streetnumber }}</p>
+
+                <p id="informationPosition">{{ features.plz }} {{ features.city }}</p>
+            </div>
+        </div>
+        <br>
+
+        <div id="gmaps">
+
+        </div>
+        <br>
+
+        <div id="comments">
+            <div id="writeComment">
+                <textarea name="myComment" placeholder="Schreibe deinen eigen Kommentar..."></textarea>
+                <button name="sendComment" class="sendComment">Senden</button>
+            </div>
+            <div id="allComments">
+                {% for comment in comments %}
+                    <p id="oneComment">{{ comment.kommentar }}</p>
+                    <p id="oneRating"> {{ comment.bewertungen }} / 10</p>
+                    <br>
+                {% endfor %}
+            </div>
+        </div>
+        <div id="bewertung">
+
+        </div>
+    </div>
+{% endblock %}

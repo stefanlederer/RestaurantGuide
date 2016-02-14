@@ -1,0 +1,13 @@
+{% extends "::base.html.twig" %}
+{% block title %}Neues Restaurant{% endblock %}
+{% block body %}
+    <div id="body">
+        <div id="newRestaurantForm">
+            <input type="text" name="RestaurantName" placeholder="Restaurantname">
+            <br>
+            <input type="file" name="RestaurantImage">
+            <br>
+            <button type="submit">Restaurant eintragen</button>
+        </div>
+    </div>
+{% endblock %}

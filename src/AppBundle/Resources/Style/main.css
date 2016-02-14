@@ -1,0 +1,32 @@
+#body {
+    position: absolute;
+    top: 80px;
+}
+#content {
+    text-align: center;
+}
+#places{
+    margin-top: 50px;
+}
+#placeName {
+}
+#position {
+}
+#streetName{
+    float:left;
+}
+
+#streetNumber{
+    float:left;
+}
+
+#plz{
+    float: left;
+}
+
+#city{
+    float: left;
+}
+#registerLoginBox {
+    text-align: center;
+}

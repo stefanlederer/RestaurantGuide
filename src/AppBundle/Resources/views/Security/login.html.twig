@@ -1,0 +1,19 @@
+{% extends "::base.html.twig" %}
+{% block title %}Login{% endblock %}
+{% block body %}
+    <div id="body">
+        {% if error %}{{ error }} {% endif %}
+        <form action="{{ path('login_check') }}" method="post">
+            <div id="registerLoginBox">
+                <input type="text" id="textfield" name="_username">
+                <br>
+                <input type="password" id="textfield" name="_password">
+                <br>
+                {#<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">#}
+                <button type="submit" id="registrierenLogin">Login</button>
+                <br>
+            </div>
+        </form>
+        <a href="{{ path('register') }}"><p id="zurRegistrierung">Zur Registrierung</p></a>
+    </div>
+{% endblock %}

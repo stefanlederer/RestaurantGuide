@@ -1,0 +1,157 @@
+{% extends "::base.html.twig" %}
+{% block title %}Startseite{% endblock %}
+{% block body %}
+    <div id="body">
+    <div id="content">
+        {% if is_granted('ROLE_USER') %}
+        <div id="newRestaurant">
+            <h1 class="heading">Neue Restaurants</h1>
+
+            <div id="model">
+                {% for newOne in newOnes %}
+                    <a href="{{ path('restaurant', ({'id': newOne.id})) }}">
+                        <div id="box">
+                            <img id="restaurantImage" src="{{ asset(newOne.image) }}">
+
+                            <p class="position">{{ newOne.name }}</p>
+
+                            <p class="position">{{ newOne.street }} {{ newOne.streetnumber }}</p>
+
+                            <p class="position">{{ newOne.plz }} {{ newOne.city }}</p>
+
+                            <div id="infoCircle">
+                                <i class="fa fa-info-circle fa-2x"></i>
+                            </div>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+        <br>
+
+        <div id="recommended">
+            <h1 class="heading">Empfohlende Restaurants</h1>
+
+                <div id="model">
+                        <a href="#">
+                            <div id="box">
+                                <img id="restaurantImage" src="#">
+
+                                <p class="position">Beispiel</p>
+
+                                <p class="position">Beispiel 1</p>
+
+                                <p class="position">1111 Beispiel</p>
+
+                                <div id="infoCircle">
+                                    <i class="fa fa-info-circle fa-2x"></i>
+                                </div>
+                            </div>
+                        </a>
+                    <a href="#">
+                        <div id="box">
+                            <img id="restaurantImage" src="#">
+
+                            <p class="position">Beispiel</p>
+
+                            <p class="position">Beispiel 1</p>
+
+                            <p class="position">1111 Beispiel</p>
+
+                            <div id="infoCircle">
+                                <i class="fa fa-info-circle fa-2x"></i>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div id="box">
+                            <img id="restaurantImage" src="#">
+
+                            <p class="position">Beispiel</p>
+
+                            <p class="position">Beispiel 1</p>
+
+                            <p class="position">1111 Beispiel</p>
+
+                            <div id="infoCircle">
+                                <i class="fa fa-info-circle fa-2x"></i>
+                            </div>
+                        </div>
+                    </a>
+            </div>
+        </div>
+        <br>
+
+        <div id="nearRestaurant">
+            <h1 class="heading">Bestbewertete Restaurants</h1>
+            <div id="model">
+                <a href="#">
+                    <div id="box">
+                        <img id="restaurantImage" src="#">
+
+                        <p class="position">Beispiel</p>
+
+                        <p class="position">Beispiel 1</p>
+
+                        <p class="position">1111 Beispiel</p>
+
+                        <div id="infoCircle">
+                            <i class="fa fa-info-circle fa-2x"></i>
+                        </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div id="box">
+                        <img id="restaurantImage" src="#">
+
+                        <p class="position">Beispiel</p>
+
+                        <p class="position">Beispiel 1</p>
+
+                        <p class="position">1111 Beispiel</p>
+
+                        <div id="infoCircle">
+                            <i class="fa fa-info-circle fa-2x"></i>
+                        </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div id="box">
+                        <img id="restaurantImage" src="#">
+
+                        <p class="position">Beispiel</p>
+
+                        <p class="position">Beispiel 1</p>
+
+                        <p class="position">1111 Beispiel</p>
+
+                        <div id="infoCircle">
+                            <i class="fa fa-info-circle fa-2x"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% else %}
+            <div id="newRestaurant">
+                <h1 class="heading">Neue Restaurants</h1>
+
+                <div id="model">
+                    {% for anonym in anonyms %}
+                        <a>
+                            <div id="box">
+                                <img id="restaurantImage" src="{{ asset(anonym.image) }}">
+
+                                <p class="position">{{ anonym.name }}</p>
+
+                                <p class="position">{{ anonym.street }} {{ anonym.streetnumber }}</p>
+
+                                <p class="position">{{ anonym.plz }} {{ anonym.city }}</p>
+                            </div>
+                        </a>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

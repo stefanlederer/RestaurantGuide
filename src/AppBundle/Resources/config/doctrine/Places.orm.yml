@@ -1,0 +1,34 @@
+AppBundle\Entity\Places:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\PlacesRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        street:
+            type: string
+            length: 255
+        streetnumber:
+            type: integer
+        plz:
+            type: integer
+        city:
+            type: string
+            length: 255
+        north:
+            type: string
+            length: 255
+        east:
+            type: string
+            length: 255
+        image:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

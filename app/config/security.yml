@@ -1,0 +1,33 @@
+security:
+    encoders:
+        # Our user class and the algorithm we'll use to encode passwords
+        # http://symfony.com/doc/current/book/security.html#encoding-the-user-s-password
+        AppBundle\Entity\User: bcrypt
+
+    providers:
+        database_users:
+            entity: { class: AppBundle:User, property: username }
+
+    # http://symfony.com/doc/current/book/security.html#firewalls-authentication
+    firewalls:
+        secured_area:
+            pattern:    ^/
+            anonymous: true
+            form_login:
+                login_path: login_route
+                check_path: login_check
+#                csrf_provider: security.csrf.token_manager
+            logout:
+                # The route name the user can go to in order to logout
+                path: logout_route
+                # The name of the route to redirect to after logging out
+                target: homepage
+           
+#    access_control:
+#        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+#        - { path: ^/adduser, roles: ROLE_ADMIN }
+#        - { path: ^/usermanagement, roles: ROLE_ADMIN }
+#        - { path: ^/changerole, roles: ROLE_ADMIN }
+#        - { path: ^/, roles: [ROLE_ADMIN, ROLE_USER] }
+
+            

@@ -1,0 +1,26 @@
+AppBundle\Entity\Bewertung:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\BewertungRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        userId:
+            type: integer
+            column: user_id
+        placesId:
+            type: integer
+            column: places_id
+        date:
+            type: datetime
+        bewertungen:
+            type: integer
+        kommentar:
+            type: string
+            length: '300'
+            nullable: true
+    lifecycleCallbacks: {  }

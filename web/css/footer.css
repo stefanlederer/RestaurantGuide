@@ -1,0 +1,26 @@
+#footer {
+    position: absolute;
+    bottom: 0;
+    height: 30px;
+    width: 100%;
+    background-color: #424242;
+    left: 0;
+}
+div.impressum {
+    position: absolute;
+    left: 20px;
+    top: 5px;
+}
+div.developers {
+    position: absolute;
+    right: 10px;
+    float: left;
+    top: 5px;
+}
+a.footerfont {
+    color: #FFFFFF;
+    font-size: 15px;
+}
+a.footerfont:hover {
+    color: #DF0101;
+}

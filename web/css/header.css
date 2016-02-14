@@ -1,0 +1,38 @@
+#header {
+    background-color: #045FB4;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    border-bottom: 2px solid #000000;
+}
+#plus{
+    position: absolute;
+    left: 40px;
+    top: 22px;
+    color: #FFFFFF;
+    transition: 1s;
+}
+#plus:hover{
+    color: #04B431;
+}
+#search {
+
+}
+input.search {
+    position: absolute;
+    left: 40%;
+    width: 20%;
+    top: 25px;
+}
+#user {
+    position: absolute;
+    right: 40px;
+    top: 22px;
+    color: #FFFFFF;
+    transition: 1s;
+}
+#user:hover {
+    color: #04B431;
+}

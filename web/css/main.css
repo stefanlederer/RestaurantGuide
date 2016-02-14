@@ -1,0 +1,148 @@
+body {
+    background-color: #58ACFA;
+}
+#body {
+    position: absolute;
+    top: 80px;
+    width: 100%;
+    left: 0;
+}
+#content {
+    position: absolute;
+    left: 20%;
+    width: 60%;
+}
+h1.heading {
+    text-align: center;
+    margin-top: 15px;
+}
+#box {
+    float: left;
+    width: 30%;
+    height: 280px;
+    margin-left: 20px;
+    background-color: #FFFFFF;
+    margin-top: 20px;
+    transition: 1s;
+    margin-bottom: 50px;
+}
+#infoCircle {
+    position: relative;
+    margin-top: -25%;
+    text-align: center;
+    display: none;
+    color: #FFFFFF;
+}
+#box:hover {
+    background-color: #045FB4;
+}
+#box:hover #infoCircle {
+    display: block;
+}
+p.position {
+    text-align: center;
+    font-size: 15px;
+    color: #000000;
+}
+#recommended {
+}
+#nearRestaurant {
+}
+#zurRegistrierung {
+    margin-top: 20px;
+    text-align: center;
+}
+#restaurantImage {
+    position: relative;
+    width: 100%;
+    height: 50%;
+}
+
+#registerLoginBox {
+    text-align: center;
+    margin-top: 50px;
+}
+#textfield {
+    margin-top: 10px;
+    box-shadow: none;
+    border-radius: 20px;
+    text-align: center;
+}
+#registrierenLogin {
+    margin-top: 10px;
+    background-color: #045FB4;
+    border: 1px solid grey;
+    border-radius: 1000px;
+    height: 50px;
+    width: 200px;
+}
+
+#information {
+    position: absolute;
+    left: 20%;
+    width: 60%;
+    height: 190px;
+    top: 50px;
+    background-color: #FFFFFF;
+}
+#informationImage {
+    margin-left: 0;
+    width: 30%;
+    height: 100%;
+    border-right: 2px solid grey;
+    float: left;
+}
+#informationLocation {
+    position: relative;
+    text-align: center;
+}
+#informationPosition {
+    font-size: 20px;
+}
+
+#gmaps {
+    position: absolute;
+    left: 20%;
+    width: 60%;
+    height: 300px;
+    top: 290px;
+    background-color: #FFFFFF;
+}
+#comments {
+    position: absolute;
+    left: 20%;
+    width: 40%;
+    top: 640px;
+    background-color: #FFFFFF;
+}
+#writeComment {
+    text-align: center;
+    border-bottom: 1px solid #045FB4;
+    height: 60px;
+}
+button.sendComment {
+
+}
+#allComments {
+    margin-top: 20px;
+}
+#bewertung {
+    position: absolute;
+    left: 61%;
+    width: 19%;
+    top: 640px;
+    height: 60px;
+    background-color: #FFFFFF;
+}
+#oneComment {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+#oneRating {
+    margin-right: 10px;
+    border-bottom: 1px solid grey;
+}
+#newRestaurantForm {
+    text-align: center;
+    margin-top: 50px;
+}

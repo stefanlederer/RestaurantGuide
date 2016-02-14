@@ -1,0 +1,18 @@
+AppBundle\Entity\Genre:
+    type: entity
+    table: genres
+    repositoryClass: AppBundle\Repository\GenreRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        placeId:
+            type: integer
+            column: place_id
+    lifecycleCallbacks: {  }

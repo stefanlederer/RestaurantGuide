@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>{% block title %}Restaurant Guide{% endblock %}</title>
+    {% block stylesheets %}
+        <link href="{{ asset('css/footer.css') }}" type="text/css" rel="stylesheet">
+        <link href="{{ asset('css/header.css') }}" type="text/css" rel="stylesheet">
+        <link href="{{ asset('css/main.css') }}" type="text/css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+</head>
+<body>
+{% block header %}
+    <div id="header">
+        {% if is_granted('ROLE_USER') %}
+            <div class="menu">
+                <a href="{{ path('newRestaurant') }}">
+                    <div id="plus">
+                        <i class="fa fa-plus fa-2x"></i>
+                    </div>
+                </a>
+
+                <div id="search">
+                    <input class="search" type="search" name="search" placeholder="Suche...">
+                </div>
+                <a href="{{ path('logout_route') }}">
+                    <div id="user">
+                        <i class="fa fa-user fa-2x"></i>
+                    </div>
+                </a>
+            </div>
+        {% else %}
+            <a href="{{ path('login_route') }}">
+                <div id="user">
+                    <i class="fa fa-user fa-2x"></i>
+                </div>
+            </a>
+        {% endif %}
+    </div>
+
+{% endblock %}
+{% block body %}
+
+
+{% endblock %}
+{% block javascripts %}
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="{{ asset('js/login.js') }}"></script>
+{% endblock %}
+</body>
+</html>
