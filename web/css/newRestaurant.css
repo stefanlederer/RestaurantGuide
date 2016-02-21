@@ -11,6 +11,7 @@ div.RestaurantImage {
     margin-left: 30%;
     width: 40%;
     height: 120px;
+    transition: 1s;
 }
 label.image-auswahl {
     margin-left: 30%;
@@ -46,4 +47,62 @@ div.RestaurantImage:hover p.image-auswahl-text {
 }
 div.RestaurantImage:hover div.image-auswahl-plus {
     visibility: visible;
+}
+div.RestaurantImage:hover {
+    background-color: #04B431;
+}
+
+input.form-name {
+    width: 20%;
+    margin-left: 0;
+    margin-top: 5px;
+    border: 1px solid #045FB4;
+    background-color: #D8D8D8;
+    height: 30px;
+    border-radius: 2px;
+}
+input.form-street {
+    width: 15%;
+    margin-left: 0;
+    margin-top: 5px;
+    border: 1px solid #045FB4;
+    background-color: #D8D8D8;
+    height: 30px;
+    border-radius: 2px;
+}
+input.form-streetnumber {
+    width: 4%;
+    margin-right: 0;
+    margin-top: 5px;
+    border: 1px solid #045FB4;
+    background-color: #D8D8D8;
+    height: 30px;
+    border-radius: 2px;
+}
+input.form-plz {
+    width: 4%;
+    margin-left: 0;
+    margin-top: 5px;
+    border: 1px solid #045FB4;
+    background-color: #D8D8D8;
+    height: 30px;
+    border-radius: 2px;
+}
+input.form-place {
+    width: 15%;
+    margin-right: 0;
+    margin-top: 5px;
+    border: 1px solid #045FB4;
+    background-color: #D8D8D8;
+    height: 30px;
+    border-radius: 2px;
+}
+button.RestaurantEintragen {
+    margin-top: 10px;
+    background-color: #045FB4;
+    border: 2px solid grey;
+    border-radius: 1000px;
+    height: 50px;
+    width: 200px;
+    color: #000000;
 }
