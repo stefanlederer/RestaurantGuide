@@ -27,7 +27,7 @@
                 </div>
                 <a href="{{ path('logout_route') }}">
                     <div id="user">
-                        <i class="fa fa-user fa-2x"></i>
+                        <i class="fa fa-sign-out fa-2x"></i>
                     </div>
                 </a>
             </div>
@@ -46,8 +46,10 @@
 
 {% endblock %}
 {% block javascripts %}
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="{{ asset('js/login.js') }}"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="{{ asset('js/map.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/gmaps.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/googlemapsAPI.js') }}"></script>
 {% endblock %}
 </body>
 </html>
