@@ -33,9 +33,9 @@
             </div>
             <div id="allComments">
                 {% for comment in comments %}
-                    <p id="oneComment">{{ comment.kommentar }}</p>
-                    <p id="oneRating"> {{ comment.bewertungen }} / 10</p>
-                    <br>
+                    <p id="oneComment">{{ comment[0].kommentar }}</p>
+                    <p >{{ comment['username'] }}</p>
+                    <p id="oneRating"> {{ comment[0].bewertungen }} / 5</p>
                 {% endfor %}
             </div>
         </div>
