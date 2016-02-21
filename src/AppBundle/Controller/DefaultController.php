@@ -6,6 +6,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\ORM\EntityRepository;
+use AppBundle\Entity\Bewertung;
 
 class DefaultController extends Controller
 {
@@ -14,10 +15,31 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request) {
 
+        $em = $this->getDoctrine()->getManager();;
+
+        //get all Places
+        $allPlaces = $em
+            ->getRepository('AppBundle:Places')
+            ->findBy(array(), array('id' => 'DESC'), 12);
+
+        //get new Places
+        $newPlaces = $em
+            ->getRepository('AppBundle:Places')
+            ->findBy(array(), array('id' => 'DESC'),3);
+
+        //get top Rated Places
+        $topRated = $em->getRepository('AppBundle:Places')
+            ->topRated();
+
+        //get recommended Places
+        $recommended = $em->getRepository('AppBundle:Places')
+            ->recommended();
+
         return $this->render('AppBundle:templates:startseite.html.twig', array(
-                'newOnes' => $this->getNewPlaces(),
-                //'topRated' => $this->getTopRated(),
-                'anonyms' => $this->getallNewPlaces()
+                'newOnes' => $newPlaces,
+                'topRated' => $topRated,
+                'recommended' => $recommended,
+                'anonyms' => $allPlaces
             )
         );
     }
@@ -51,70 +73,13 @@ class DefaultController extends Controller
         return $this->render('AppBundle:templates:newRestaurant.html.twig');
     }
 
-
-
-    private function getNewPlaces() {
-
-        $em = $this->getDoctrine()->getManager();;
-
-        $newOne = $em
-            ->getRepository('AppBundle:Places')
-            ->findBy(array(), array('id' => 'DESC'),3);
-
-        return $newOne;
-    }
-
-    private function getallNewPlaces() {
-        $em = $this->getDoctrine()->getManager();;
-
-        $newOne = $em
-            ->getRepository('AppBundle:Places')
-            ->findBy(array(), array('id' => 'DESC'), 12);
-
-        return $newOne;
-    }
-
-    private function getRecommendedPlaces() {
-
-    }
-    private function getTopRated() {
+    private function getComments($id) {
 
         $em = $this->getDoctrine()->getManager();
-        $topRated = $em->getRepository('AppBundle:Places')
-            ->topRated();
-
-        return $topRated;
-    }
-
-    private function getComments($id) {
-        $em = $this->getDoctrine()->getManager();;
-
-        $comments = $em
-            ->getRepository('AppBundle:Bewertung')
-            ->findBy(array('placesId' => $id), array('date' => 'DESC'));
-
-        /*$em = $this->getDoctrine()->getManager();
-        $comments = $em->getRepository('AppBundle:Bewertung')
-            ->getComments($id);*/
+        $comments = $em->getRepository('AppBundle:Bewertung')->getComments($id);
 
         return $comments;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     //get all features from place
     private function getFeatures($id) {
@@ -124,26 +89,4 @@ class DefaultController extends Controller
 
         return $features;
     }
-
-    //get all Places
-    private function getallPlaces() {
-        $repository = $this->getDoctrine()
-            ->getRepository('AppBundle:Places');
-
-        $places = $repository->findAll();
-
-        return $places;
-    }
-    //Joins the Place with Bewertung
-    /*private function joinPlaceBewertung() {
-        $em = $this->getDoctrine()->getManager();
-        $query = $em->createQuery(
-            'SELECT p
-    FROM AppBundle:Product p
-    WHERE p.price > :price
-    ORDER BY p.price ASC'
-        )->setParameter('price', '19.99');
-
-        $products = $query->getResult();
-    }*/
 }
