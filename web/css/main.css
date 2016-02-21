@@ -46,7 +46,7 @@ p.position {
 }
 #recommended {
 }
-#nearRestaurant {
+#topRated {
 }
 #zurRegistrierung {
     margin-top: 20px;
@@ -99,14 +99,16 @@ p.position {
 #informationPosition {
     font-size: 20px;
 }
+#CoordinateLati, #CoordinateLong {
+    opacity: 0;
+}
 
-#gmaps {
+#routemap {
     position: absolute;
     left: 20%;
     width: 60%;
     height: 300px;
     top: 290px;
-    background-color: #FFFFFF;
 }
 #comments {
     position: absolute;
