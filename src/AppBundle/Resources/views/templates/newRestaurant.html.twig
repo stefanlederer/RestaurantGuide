@@ -5,24 +5,26 @@
         <div id="newRestaurantMap">
 
         </div>
-        <div id="newRestaurantForm">
-            <div class="RestaurantImage">
-                <label for="image" class="image-auswahl">
-                    <div class="image-auswahl-plus"><i class="fa fa-plus"></i></div>
-                    <p class="image-auswahl-text">W&aumlhlen Sie eine Musikdatei aus</p>
-                    <input type="file" class="image-auswahl-input">
-                </label>
+        <form  action="{{ path('addingRestaurant') }}" method="post" >
+            <div id="newRestaurantForm">
+                <div class="RestaurantImage">
+                    <label for="image" class="image-auswahl">
+                        <div class="image-auswahl-plus"><i class="fa fa-plus"></i></div>
+                        <p class="image-auswahl-text">W&aumlhlen Sie eine Musikdatei aus</p>
+                        <input type="file" class="image-auswahl-input">
+                    </label>
+                </div>
+                <br>
+                <input type="text" class="form-name" name="restaurantname" placeholder="Restaurantname">
+                <br>
+                <input type="text" class="form-street" name="restaurantstreet" placeholder="Strasse">
+                <input type="text" class="form-streetnumber" name="restaurantstreetnum" placeholder="Strassennummer">
+                <br>
+                <input type="text" class="form-plz" name="restaurantplz" placeholder="PLZ">
+                <input type="text" class="form-place" name="restaurantplace" placeholder="Ort">
+                <br>
+                <button type="submit" class="RestaurantEintragen">Restaurant eintragen</button>
             </div>
-            <br>
-            <input type="text" class="form-name" placeholder="Restaurantname">
-            <br>
-            <input type="text" class="form-street" placeholder="Strasse">
-            <input type="text" class="form-streetnumber" placeholder="Strassennummer">
-            <br>
-            <input type="text" class="form-plz" placeholder="PLZ">
-            <input type="text" class="form-place" placeholder="Ort">
-            <br>
-            <button type="submit" class="RestaurantEintragen">Restaurant eintragen</button>
-        </div>
+        </form>
     </div>
 {% endblock %}
