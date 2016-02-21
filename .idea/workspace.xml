@@ -2,16 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d7142a4-4afa-47b8-b4a8-66a82e82ce0d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/getInfoMap.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/templates/bewertung.html.twig" afterPath="$PROJECT_DIR$/web/css/newRestaurant.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/BewertungRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/BewertungRepository.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/PlacesRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/PlacesRepository.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/templates/newRestaurant.html.twig" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/templates/newRestaurant.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/templates/startseite.html.twig" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/templates/startseite.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/main.css" afterPath="$PROJECT_DIR$/web/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/newRestaurant.css" afterPath="$PROJECT_DIR$/web/css/newRestaurant.css" />
     </list>
     <ignored path="RGuide.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,8 +33,8 @@
       <file leaf-file-name="newRestaurant.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/templates/newRestaurant.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.0">
-              <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
+            <state vertical-scroll-proportion="-16.0">
+              <caret line="24" column="63" selection-start-line="24" selection-start-column="63" selection-end-line="24" selection-end-column="63" />
               <folding />
             </state>
           </provider>
@@ -46,8 +43,8 @@
       <file leaf-file-name="newRestaurant.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/css/newRestaurant.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.026200874">
-              <caret line="1" column="19" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.16157205">
+              <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -66,7 +63,7 @@
       <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.44444445">
+            <state vertical-scroll-proportion="0.5555556">
               <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding />
             </state>
@@ -126,11 +123,11 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/web/js/routeMap.js" />
         <option value="$PROJECT_DIR$/web/css/main.css" />
-        <option value="$PROJECT_DIR$/web/css/newRestaurant.css" />
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/templates/newRestaurant.html.twig" />
         <option value="$PROJECT_DIR$/web/js/gmaps.js" />
         <option value="$PROJECT_DIR$/web/js/getInfoMap.js" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/templates/newRestaurant.html.twig" />
+        <option value="$PROJECT_DIR$/web/css/newRestaurant.css" />
       </list>
     </option>
   </component>
@@ -508,7 +505,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../BewertungssystemBosch" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../musicstreaming" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
@@ -609,7 +606,19 @@
       <option name="project" value="LOCAL" />
       <updated>1456067007464</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="[FE] added google maps to new Restaurant with set marker function">
+      <created>1456069120591</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1456069120591</updated>
+    </task>
+    <task id="LOCAL-00009" summary="[FE] added google maps to new Restaurant with set marker function -&gt; update">
+      <created>1456069186282</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1456069186282</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -674,7 +683,9 @@
     <MESSAGE value="[FE][BE] added gmaps to restaurant.html.twig" />
     <MESSAGE value="[BE] created new Controller -&gt; clearlier (NewRestaurantController, RestaurantInformationController)" />
     <MESSAGE value="[FE] fixed bugs in routeMap.js for restaurant information in restaurant.html.twig" />
-    <option name="LAST_COMMIT_MESSAGE" value="[FE] fixed bugs in routeMap.js for restaurant information in restaurant.html.twig" />
+    <MESSAGE value="[FE] added google maps to new Restaurant with set marker function" />
+    <MESSAGE value="[FE] added google maps to new Restaurant with set marker function -&gt; update" />
+    <option name="LAST_COMMIT_MESSAGE" value="[FE] added google maps to new Restaurant with set marker function -&gt; update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1018,14 +1029,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.44444445">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/js/gmaps.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.081232496">
@@ -1042,18 +1045,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5555556">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/templates/newRestaurant.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.0">
-          <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
+        <state vertical-scroll-proportion="-16.0">
+          <caret line="24" column="63" selection-start-line="24" selection-start-column="63" selection-end-line="24" selection-end-column="63" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/css/newRestaurant.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.026200874">
-          <caret line="1" column="19" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.16157205">
+          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
           <folding />
         </state>
       </provider>

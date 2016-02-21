@@ -10,16 +10,29 @@ namespace AppBundle\Repository;
  */
 class PlacesRepository extends \Doctrine\ORM\EntityRepository
 {
-    public function topRated() {
+    public function topRated()
+    {
         $em = $this->getEntityManager();
         $query = $em->createQueryBuilder()
-            ->select('p','c')
-            ->from('AppBundle:Bewertung','c')
-            ->innerJoin('AppBundle:Places','p')
-            ->where('c.placesId = p.id')
-            ->setMaxResults(3)
-            ->orderBy('c.bewertungen','DESC');
-        print_r($query->getQuery()->getResult());
+            ->select('p', 'c.bewertungen as bewertungen')
+            ->from('AppBundle:Places', 'p')
+            ->leftJoin('AppBundle:Bewertung', 'c', 'WITH', 'p.id = c.placesId');
+
         return $query->getQuery()->getResult();
+    }
+
+    public function recommended()
+    {
+        $em = $this->getEntityManager();
+        $query = $em->createQueryBuilder()
+            ->select('c')
+            ->from('AppBundle:Bewertung', 'c')
+            ->leftJoin('AppBundle:Places', 'p', 'WITH', 'p.id = c.placesId');
+
+        $averageRating = $query->getQuery()->getResult();
+
+//        for ($i = 1; $i <= $averageRating['placesId']; $i++) {
+//
+//        }
     }
 }

@@ -13,10 +13,15 @@ class BewertungRepository extends \Doctrine\ORM\EntityRepository
     public function getComments($id) {
         $em = $this->getEntityManager();
         $query = $em->createQueryBuilder()
-            ->select('p','c')
-            ->from('AppBundle:Places','p')
-            ->innerJoin('AppBundle:Bewertung','c')
-            ->where('c.placesId = p.id');
-        //return $query->getQuery()->getResult();
+            ->select('c , u.username as username')
+            ->from('AppBundle:Bewertung','c')
+            ->leftJoin('AppBundle:User', 'u', 'WITH', 'c.userId = u.id')
+            ->where('c.placesId = :id')
+            ->setParameter('id',$id);
+        return $query->getQuery()->getResult();
+    }
+
+    public function getAverageRating() {
+
     }
 }

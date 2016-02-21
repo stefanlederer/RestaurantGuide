@@ -6,9 +6,21 @@
 
         </div>
         <div id="newRestaurantForm">
-            <input type="text" name="RestaurantName" placeholder="Restaurantname">
+            <div class="RestaurantImage">
+                <label for="image" class="image-auswahl">
+                    <div class="image-auswahl-plus"><i class="fa fa-plus"></i></div>
+                    <p class="image-auswahl-text">W&aumlhlen Sie eine Musikdatei aus</p>
+                    <input type="file" class="image-auswahl-input">
+                </label>
+            </div>
             <br>
-            <input type="file" name="RestaurantImage">
+            <input type="text" name="newRestaurantInput" placeholder="Restaurantname">
+            <br>
+            <input type="text" name="newRestaurantInput" placeholder="Strasse">
+            <input type="text" name="newRestaurantInput-streetnumber" placeholder="Strassennummer">
+            <br>
+            <input type="text" name="newRestaurantInput-plz" placeholder="PLZ">
+            <input type="text" name="newRestaurantInput" placeholder="Ort">
             <br>
             <button type="submit">Restaurant eintragen</button>
         </div>

@@ -43,11 +43,4 @@ class DefaultController extends Controller
             )
         );
     }
-
-    /**
-     * @Route("/meineBewertung", name="bewertung")
-     */
-    public function bewertungAction() {
-        return $this->render('AppBundle:templates:bewertung.html.twig');
-    }
 }

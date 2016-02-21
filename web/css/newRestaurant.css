@@ -7,3 +7,43 @@
     width: 40%;
     text-align: center;
 }
+div.RestaurantImage {
+    margin-left: 30%;
+    width: 40%;
+    height: 120px;
+}
+label.image-auswahl {
+    margin-left: 30%;
+    width: 40%;
+    height: 120px;
+    border: 1px solid #424242;
+    position: absolute;
+    left: 0;
+}
+div.image-auswahl-plus {
+    color: #424242;
+    position: absolute;
+    width: 100%;
+    line-height: 120px;
+    vertical-align: middle;
+    font-size: 40px;
+    visibility: hidden;
+}
+p.image-auswahl-text {
+    color: #000000;
+    position: absolute;
+    width: 100%;
+    line-height: 120px;
+    top: -16px;
+}
+input.image-auswahl-input {
+    opacity: 0;
+    width: 100%;
+    height: 120px;
+}
+div.RestaurantImage:hover p.image-auswahl-text {
+    visibility: hidden;
+}
+div.RestaurantImage:hover div.image-auswahl-plus {
+    visibility: visible;
+}
