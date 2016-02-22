@@ -13,36 +13,43 @@
                 <p id="informationPosition">{{ features.plz }} {{ features.city }}</p>
 
                 <p id="CoordinateLati">{{ features.east }}</p>
+
                 <p id="CoordinateLong">{{ features.north }}</p>
             </div>
         </div>
         <br>
+
         <div id="routemap">
 
         </div>
         <br>
 
-        <div id="comments">
-            <div id="writeComment">
-                <textarea class="myComment" name="myComment" placeholder="Schreibe deinen eigenen Kommentar..."></textarea>
-                <div class="MyRating">
+        <form action="{{ path('addedRating'), ({'userId': features.id})) }}" method="post">
+            <div id="comments">
+                <div id="writeComment">
+                    <textarea class="myComment" name="myComment"
+                              placeholder="Schreibe deinen eigenen Kommentar..."></textarea>
 
+                    <div class="MyRating">
+
+                    </div>
+                    <button name="sendComment" class="sendComment" type="submit">
+                        <i class="fa fa-paper-plane"></i>
+                        Senden
+                    </button>
                 </div>
-                <button name="sendComment" class="sendComment">
-                    <i class="fa fa-paper-plane"></i>
-                    Senden
-                </button>
-            </div>
-            <div id="allComments">
-                {% for comment in comments %}
-                    <p id="oneComment">{{ comment[0].kommentar }}</p>
-                    <p >{{ comment['username'] }}</p>
-                    <p id="oneRating"> {{ comment[0].bewertungen }} / 5</p>
-                {% endfor %}
-            </div>
-        </div>
-        <div id="bewertung">
 
-        </div>
+                <div id="allComments">
+                    {% for comment in comments %}
+                        <p id="oneComment">{{ comment[0].kommentar }}</p>
+                        <p>{{ comment['username'] }}</p>
+                        <p id="oneRating"> {{ comment[0].bewertungen }} / 5</p>
+                    {% endfor %}
+                </div>
+            </div>
+            <div id="bewertung">
+
+            </div>
+        </form>
     </div>
 {% endblock %}
