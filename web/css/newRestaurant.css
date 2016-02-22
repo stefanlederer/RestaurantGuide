@@ -7,15 +7,26 @@
     width: 40%;
     text-align: center;
 }
+#slideButton {
+    position: absolute;
+    right: 30%;
+    top: 260px;
+    font-size: 20px;
+    color: #04B431;
+}
+#newRestaurantForm {
+
+    display: none;
+}
 div.RestaurantImage {
-    margin-left: 30%;
-    width: 40%;
+    margin-left: 40%;
+    width: 20%;
     height: 120px;
     transition: 1s;
 }
 label.image-auswahl {
-    margin-left: 30%;
-    width: 40%;
+    margin-left: 40%;
+    width: 20%;
     height: 120px;
     border: 1px solid #424242;
     position: absolute;

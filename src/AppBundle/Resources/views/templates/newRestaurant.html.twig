@@ -5,7 +5,10 @@
         <div id="newRestaurantMap">
 
         </div>
-        <form  action="{{ path('addingRestaurant') }}" method="post" >
+        <div id="slideButton">
+            <i class="fa fa-sort-desc" id="slider"></i>
+        </div>
+        <form action="{{ path('addingRestaurant') }}" method="post">
             <div id="newRestaurantForm">
                 <div class="RestaurantImage">
                     <label for="image" class="image-auswahl">
