@@ -24,7 +24,7 @@
         </div>
         <br>
 
-        <form action="{{ path('addedRating'), ({'userId': features.id})) }}" method="post">
+        <form action="{{ path('addedRating', ({'userId': features.id})) }}" method="post">
             <div id="comments">
                 <div id="writeComment">
                     <textarea class="myComment" name="myComment"
@@ -48,7 +48,13 @@
                 </div>
             </div>
             <div id="bewertung">
-
+                <select id="bewertung-select">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
             </div>
         </form>
     </div>

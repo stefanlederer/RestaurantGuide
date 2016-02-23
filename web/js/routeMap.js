@@ -35,7 +35,7 @@ $(document).ready(function() {
                 lat: $mylat,
                 lng: $mylng,
                 infoWindow: {
-                    conent: "Hier bin ich"
+                    content: "Hier bin ich"
                 }
             });
 
