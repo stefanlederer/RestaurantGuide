@@ -6,6 +6,7 @@ use AppBundle\Entity\Bewertung;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
+use AppBundle\Entity\User;
 
 class RestaurantInformationController extends Controller
 {
@@ -14,6 +15,37 @@ class RestaurantInformationController extends Controller
      */
     public function restaurantAction()
     {
+
+        //adding comment
+        $userId = new User();
+        $userId = $this->getUser()->getId();
+
+        $placesId = $_GET["id"];
+
+        $time = new \DateTime();
+        $time->format('Y-m-d \O\n H:i:s');
+
+        $request = Request::createFromGlobals();
+        $comment = $request->request->get("myComment");
+//        $bewertung = $request->request->get("rating");
+        $bewertung = 5;
+
+        if (strlen($comment) > 0) {
+            $rating = new Bewertung();
+
+            $rating->setUserId($userId);
+            $rating->setPlacesId($placesId);
+            $rating->setKommentar($comment);
+            $rating->setBewertungen($bewertung);
+            $rating->setDate($time);
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($rating);
+            $em->flush();
+        }
+
+
+
         //get information, id's, ... of the restaurtant
         $repository = $this->getDoctrine()
             ->getRepository('AppBundle:Places');
@@ -27,37 +59,5 @@ class RestaurantInformationController extends Controller
             'features' => $features,
             'comments' => $comments
         ));
-    }
-
-    /**
-     * @Route("/food", name="addedRating")
-     */
-    public function addedRating()
-    {
-        $userId = $this->get('security.token_storage')->getToken()->getUserId();
-        $placesId = $_GET["userId"];
-        $time = new \DateTime();
-        $time->format('H:i:s \O\n Y-m-d');
-
-        $request = Request::createFromGlobals();
-        $comment = $request->request->get("myComment");
-//        $rating = $request->request->get("rating");
-
-        if (strlen($comment) > 0) {
-            $rating = new Bewertung();
-
-            $rating->setUserId($userId);
-            $rating->setPlacesId($placesId);
-            $rating->setKommentar($comment);
-//            $rating->setBewertungen($rating);
-            $rating->setDate($time);
-
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($rating);
-            $em->flush();
-        }
-        else {
-            print "error-comment!?";
-        }
     }
 }
