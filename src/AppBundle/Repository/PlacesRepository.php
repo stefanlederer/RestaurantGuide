@@ -14,11 +14,31 @@ class PlacesRepository extends \Doctrine\ORM\EntityRepository
     {
         $em = $this->getEntityManager();
         $query = $em->createQueryBuilder()
-            ->select('p', 'c.bewertungen as bewertungen')
-            ->from('AppBundle:Places', 'p')
-            ->leftJoin('AppBundle:Bewertung', 'c', 'WITH', 'p.id = c.placesId');
+            ->select('c')
+            ->from('AppBundle:Bewertung', 'c')
+//            ->leftJoin('AppBundle:Bewertung', 'c', 'WITH', 'p.id = c.placesId')
+            ->orderBy('c.placesId', 'ASC');
 
-        return $query->getQuery()->getResult();
+        $rating = $query->getQuery()->getArrayResult();
+
+        $ordered = array();
+        $oldRating = 0;
+        $oldId = "";
+        $quantity = 0;
+        for ($i = 0; $i < count($rating); $i++) {
+            if ($rating[$i]['placesId'] = $oldId) {
+                $ordered[$rating[$i]['placesId']] = ($rating[$i]['bewertungen'] + $oldRating);
+                $quantity = $quantity + 1;
+            } else {
+                $ordered[$oldId] = $ordered[$oldId] / $quantity;
+                $ordered[$rating[$i]['placesId']] = ($rating[$i]['bewertungen']);
+                $quantity = 0;
+            }
+            $oldRating = $rating[$i]['bewertungen'];
+            $oldId = $rating[$i]['placesId'];
+        }
+        print_r($ordered);
+
     }
 
     public function recommended()
@@ -28,13 +48,13 @@ class PlacesRepository extends \Doctrine\ORM\EntityRepository
             ->select('c')
             ->from('AppBundle:Bewertung', 'c')
 //            ->leftJoin('AppBundle:Places', 'p', 'WITH', 'p.id = c.placesId')
-            ->orderBy('c.placesId','ASC');
+            ->orderBy('c.placesId', 'ASC');
 
-        $averageRating = $query->getQuery()->getArrayResult();
+        $rating = $query->getQuery()->getArrayResult();
 
         $placesId = array();
-        for ($i = 0; $i < count($averageRating); $i++) {
-            $placesId[$i] = $averageRating[$i]['placesId'];
+        for ($i = 0; $i < count($rating); $i++) {
+            $placesId[$i] = $rating[$i]['placesId'];
         }
 
         $values = array_count_values($placesId);
