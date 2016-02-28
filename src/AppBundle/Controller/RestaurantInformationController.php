@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\User;
+use Symfony\Component\HttpFoundation\Response;
 
 class RestaurantInformationController extends Controller
 {
@@ -26,9 +27,10 @@ class RestaurantInformationController extends Controller
         $time->format('Y-m-d \O\n H:i:s');
 
         $request = Request::createFromGlobals();
-        $comment = $request->request->get("myComment");
-//        $bewertung = $request->request->get("rating");
-        $bewertung = 5;
+        $comment = $request->request->get('myComment');
+        $bewertung = $request->request->get('rating');
+        print_r("fdjslkfjdls");
+        print_r($bewertung);
 
         if (strlen($comment) > 0) {
             $rating = new Bewertung();
@@ -36,7 +38,7 @@ class RestaurantInformationController extends Controller
             $rating->setUserId($userId);
             $rating->setPlacesId($placesId);
             $rating->setKommentar($comment);
-            $rating->setBewertungen($bewertung);
+//            $rating->setBewertungen($bewertung);
             $rating->setDate($time);
 
             $em = $this->getDoctrine()->getManager();
@@ -59,5 +61,9 @@ class RestaurantInformationController extends Controller
             'features' => $features,
             'comments' => $comments
         ));
+
+        $response = new Response(json_encode(array()));
+        $response->headers->set('Content-Type', 'application/json');
+        return $response;
     }
 }
