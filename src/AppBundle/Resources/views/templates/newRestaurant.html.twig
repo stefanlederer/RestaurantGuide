@@ -8,13 +8,13 @@
         <div id="slideButton">
             <i class="fa fa-sort-desc" id="slider"></i>
         </div>
-        <form action="{{ path('addingRestaurant') }}" method="post">
+        <form action="{{ path('newRestaurant') }}" method="post">
             <div id="newRestaurantForm">
                 <div class="RestaurantImage">
                     <label for="image" class="image-auswahl">
                         <div class="image-auswahl-plus"><i class="fa fa-plus"></i></div>
                         <p class="image-auswahl-text">W&aumlhlen Sie ein Bild aus</p>
-                        <input type="file" class="image-auswahl-input">
+                        <input type="file" class="image-auswahl-input" name="restaurantImage">
                     </label>
                 </div>
                 <br>

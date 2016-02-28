@@ -5,6 +5,7 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\Bewertung;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 class RestaurantInformationController extends Controller
 {

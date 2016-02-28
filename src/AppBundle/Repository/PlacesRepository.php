@@ -21,23 +21,23 @@ class PlacesRepository extends \Doctrine\ORM\EntityRepository
 
         $rating = $query->getQuery()->getArrayResult();
 
-        $ordered = array();
-        $oldRating = 0;
-        $oldId = "";
-        $quantity = 0;
-        for ($i = 0; $i < count($rating); $i++) {
-            if ($rating[$i]['placesId'] = $oldId) {
-                $ordered[$rating[$i]['placesId']] = ($rating[$i]['bewertungen'] + $oldRating);
-                $quantity = $quantity + 1;
-            } else {
-                $ordered[$oldId] = $ordered[$oldId] / $quantity;
-                $ordered[$rating[$i]['placesId']] = ($rating[$i]['bewertungen']);
-                $quantity = 0;
-            }
-            $oldRating = $rating[$i]['bewertungen'];
-            $oldId = $rating[$i]['placesId'];
-        }
-        print_r($ordered);
+//        $ordered = array();
+//        $oldRating = 0;
+//        $oldId = "";
+//        $quantity = 0;
+//        for ($i = 0; $i < count($rating); $i++) {
+//            if ($rating[$i]['placesId'] = $oldId) {
+//                $ordered[$rating[$i]['placesId']] = ($rating[$i]['bewertungen'] + $oldRating);
+//                $quantity = $quantity + 1;
+//            } else {
+//                $ordered[$oldId] = $ordered[$oldId] / $quantity;
+//                $ordered[$rating[$i]['placesId']] = ($rating[$i]['bewertungen']);
+//                $quantity = 0;
+//            }
+//            $oldRating = $rating[$i]['bewertungen'];
+//            $oldId = $rating[$i]['placesId'];
+//        }
+//        print_r($ordered);
 
     }
 
