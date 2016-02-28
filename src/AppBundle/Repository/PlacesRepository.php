@@ -27,12 +27,41 @@ class PlacesRepository extends \Doctrine\ORM\EntityRepository
         $query = $em->createQueryBuilder()
             ->select('c')
             ->from('AppBundle:Bewertung', 'c')
-            ->leftJoin('AppBundle:Places', 'p', 'WITH', 'p.id = c.placesId');
+//            ->leftJoin('AppBundle:Places', 'p', 'WITH', 'p.id = c.placesId')
+            ->orderBy('c.placesId','ASC');
 
-        $averageRating = $query->getQuery()->getResult();
+        $averageRating = $query->getQuery()->getArrayResult();
 
-//        for ($i = 1; $i <= $averageRating['placesId']; $i++) {
-//
-//        }
+        $placesId = array();
+        for ($i = 0; $i < count($averageRating); $i++) {
+            $placesId[$i] = $averageRating[$i]['placesId'];
+        }
+
+        $values = array_count_values($placesId);
+        arsort($values);
+        $popular = array_slice(array_keys($values), 0, 5, true);
+
+//        print_r($popular);
+
+        $rec1 = $popular[0];
+        $rec2 = $popular[1];
+        $rec3 = $popular[2];
+
+        $query2 = $em->createQueryBuilder()
+            ->select('p')
+            ->from('AppBundle:Places', 'p')
+            ->leftJoin('AppBundle:Bewertung', 'c', 'WITH', 'p.id = c.placesId')
+            ->where('c.placesId = :rec1')
+            ->orWhere('c.placesId = :rec2')
+            ->orWhere('c.placesId = :rec3')
+            ->setParameter('rec1', $rec1)
+            ->setParameter('rec2', $rec2)
+            ->setParameter('rec3', $rec3);
+
+        $places = $query2->getQuery()->getResult();
+
+//        print_r($places);
+
+        return $places;
     }
 }
