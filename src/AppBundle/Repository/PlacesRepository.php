@@ -21,24 +21,57 @@ class PlacesRepository extends \Doctrine\ORM\EntityRepository
 
         $rating = $query->getQuery()->getArrayResult();
 
-//        $ordered = array();
-//        $oldRating = 0;
-//        $oldId = "";
-//        $quantity = 0;
-//        for ($i = 0; $i < count($rating); $i++) {
-//            if ($rating[$i]['placesId'] = $oldId) {
-//                $ordered[$rating[$i]['placesId']] = ($rating[$i]['bewertungen'] + $oldRating);
-//                $quantity = $quantity + 1;
-//            } else {
-//                $ordered[$oldId] = $ordered[$oldId] / $quantity;
-//                $ordered[$rating[$i]['placesId']] = ($rating[$i]['bewertungen']);
-//                $quantity = 0;
-//            }
-//            $oldRating = $rating[$i]['bewertungen'];
-//            $oldId = $rating[$i]['placesId'];
-//        }
-//        print_r($ordered);
+        $ordered = array();
+        $quantity = 0;
+        $rate = 0;
+        for ($i = 0; $i < count($rating); $i++) {
+            if (($i + 1) < count($rating)) {
+                if ($rating[$i + 1]['placesId'] == $rating[$i]['placesId']) {
+                    $rate = $rating[$i]['bewertungen'] + $rate;
+                    $quantity = $quantity + 1;
+                } else {
+                    $rate = $rating[$i]['bewertungen'] + $rate;
+                    $quantity = $quantity + 1;
+                    $average = $rate / $quantity;
+                    $ordered[$rating[$i]['placesId']] = $average;
+                    $rate = 0;
+                    $quantity = 0;
+                }
+            } else {
+                if ($rating[$i - 1]['placesId'] == $rating[$i]['placesId']) {
+                    $rate = $rating[$i]['bewertungen'] + $rate;
+                    $quantity = $quantity + 1;
+                    $average = $rate / $quantity;
+                    $ordered[$rating[$i]['placesId']] = $average;
+                } else {
+                    $rate = $rating[$i]['bewertungen'];
+                    $quantity = 1;
+                    $average = $rate / $quantity;
+                    $ordered[$rating[$i]['placesId']] = $average;
+                }
+            }
+        }
+        arsort($ordered);
 
+        $key = array_keys($ordered);
+        $rec1 = $key[0];
+        $rec2 = $key[1];
+        $rec3 = $key[2];
+
+        $query2 = $em->createQueryBuilder()
+            ->select('p')
+            ->from('AppBundle:Places', 'p')
+            ->leftJoin('AppBundle:Bewertung', 'c', 'WITH', 'p.id = c.placesId')
+            ->where('c.placesId = :rec1')
+            ->orWhere('c.placesId = :rec2')
+            ->orWhere('c.placesId = :rec3')
+            ->setParameter('rec1', $rec1)
+            ->setParameter('rec2', $rec2)
+            ->setParameter('rec3', $rec3);
+
+        $places = $query2->getQuery()->getResult();
+
+        return $places;
     }
 
     public function recommended()

@@ -58,51 +58,23 @@
             <h1 class="heading">Bestbewertete Restaurants</h1>
 
             <div id="model">
-                <a href="#">
-                    <div id="box">
-                        <img id="restaurantImage" src="#">
+                {% for topRate in topRated %}
+                    <a href="{{ path('restaurant', ({'id': topRate.id})) }}">
+                        <div id="box">
+                            <img id="restaurantImage" src="{{ asset(topRate.image) }}">
 
-                        <p class="position">Beispiel</p>
+                            <p class="position">{{ topRate.name }}</p>
 
-                        <p class="position">Beispiel 1</p>
+                            <p class="position">{{ topRate.street }} {{ topRate.streetnumber }}</p>
 
-                        <p class="position">1111 Beispiel</p>
+                            <p class="position">{{ topRate.plz }} {{ topRate.city }}</p>
 
-                        <div id="infoCircle">
-                            <i class="fa fa-info-circle fa-2x"></i>
+                            <div id="infoCircle">
+                                <i class="fa fa-info-circle fa-2x"></i>
+                            </div>
                         </div>
-                    </div>
-                </a>
-                <a href="#">
-                    <div id="box">
-                        <img id="restaurantImage" src="#">
-
-                        <p class="position">Beispiel</p>
-
-                        <p class="position">Beispiel 1</p>
-
-                        <p class="position">1111 Beispiel</p>
-
-                        <div id="infoCircle">
-                            <i class="fa fa-info-circle fa-2x"></i>
-                        </div>
-                    </div>
-                </a>
-                <a href="#">
-                    <div id="box">
-                        <img id="restaurantImage" src="#">
-
-                        <p class="position">Beispiel</p>
-
-                        <p class="position">Beispiel 1</p>
-
-                        <p class="position">1111 Beispiel</p>
-
-                        <div id="infoCircle">
-                            <i class="fa fa-info-circle fa-2x"></i>
-                        </div>
-                    </div>
-                </a>
+                    </a>
+                {% endfor %}
             </div>
             {% else %}
             <div id="newRestaurant">
