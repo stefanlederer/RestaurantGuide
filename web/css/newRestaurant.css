@@ -108,6 +108,24 @@ input.form-place {
     height: 30px;
     border-radius: 2px;
 }
+input.form-lat {
+    width: 20%;
+    margin-left: 0;
+    margin-top: 5px;
+    border: 1px solid #045FB4;
+    background-color: #D8D8D8;
+    height: 30px;
+    border-radius: 2px;
+}
+input.form-lng {
+    width: 20%;
+    margin-right: 0;
+    margin-top: 5px;
+    border: 1px solid #045FB4;
+    background-color: #D8D8D8;
+    height: 30px;
+    border-radius: 2px;
+}
 button.RestaurantEintragen {
     margin-top: 10px;
     background-color: #045FB4;
