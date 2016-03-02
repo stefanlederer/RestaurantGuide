@@ -3,26 +3,20 @@
  */
 $(document).ready(function () {
 
+    console.log("gmaps");
     //get Google Maps
-    var map = new GMaps({
+    var map2 = new GMaps({
         div: '#newRestaurantMap',
         lat: 47.802904,
         lng: 12.9863902,
-        zoom: 11
-    });
-
-    map.setContextMenu({
-        control: 'map',
-        options: [{
-            title: 'Wählen sie einen Ort aus',
-            name: 'add_marker',
-            action: function (e) {
-                this.addMarker({
-                    lat: e.latLng.lat(),
-                    lng: e.latLng.lng(),
-                    title: 'Ausgewählter Ort'
-                });
-            }
-        }]
+        zoom: 11,
+        click: function(e) {
+            map2.removeMarkers();
+            map2.addMarker({
+                lat: oldlat = e.latLng.lat(),
+                lng: oldlng = e.latLng.lng(),
+                title: 'Ausgewählter Ort'
+            });
+        }
     });
 });

@@ -37,31 +37,31 @@ class NewRestaurantController extends Controller
 //            && strlen($restaurantPLZ) > 0 && strlen($restaurantplace) > 0 && strlen($north) > 0 && strlen($east) > 0
 //        ) {
 
-        if ($imageFileType = "jpg" && $imageFileType = "png" && $imageFileType = "jpeg"
-                    && $imageFileType = "gif"
-        ) {
-
-            $data = $file   ;
-            if ($data['attachment']->move($targetDir, $restaurantImg)) {
-
-            $place = new Places();
-
-            $place->setName($restaurantName);
-            $place->setStreet($restaurantStreet);
-            $place->setStreetnumber($restaurantStreetNumber);
-            $place->setPlz($restaurantPLZ);
-            $place->setCity($restaurantplace);
-            $place->setNorth($north);
-            $place->setEast($east);
-            $place->setImage("images/".$restaurantImg);
-
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($place);
-            $em->flush();
-            } else {
-                print_r("cannot move file");
-            }
-        }
+//        if ($imageFileType = "jpg" && $imageFileType = "png" && $imageFileType = "jpeg"
+//                    && $imageFileType = "gif"
+//        ) {
+//
+//            $data = $file   ;
+//            if ($data['attachment']->move($targetDir, $restaurantImg)) {
+//
+//            $place = new Places();
+//
+//            $place->setName($restaurantName);
+//            $place->setStreet($restaurantStreet);
+//            $place->setStreetnumber($restaurantStreetNumber);
+//            $place->setPlz($restaurantPLZ);
+//            $place->setCity($restaurantplace);
+//            $place->setNorth($north);
+//            $place->setEast($east);
+//            $place->setImage("images/".$restaurantImg);
+//
+//            $em = $this->getDoctrine()->getManager();
+//            $em->persist($place);
+//            $em->flush();
+//            } else {
+//                print_r("cannot move file");
+//            }
+//        }
 
         return $this->render('AppBundle:templates:newRestaurant.html.twig');
     }

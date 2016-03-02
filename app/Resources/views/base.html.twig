@@ -47,12 +47,11 @@
 
 {% endblock %}
 {% block javascripts %}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/slider.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/rater.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/star-rating.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/routeMap.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/getInfoMap.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/gmaps.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/googlemapsAPI.js') }}"></script>
 {% endblock %}

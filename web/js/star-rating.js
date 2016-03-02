@@ -10,23 +10,26 @@ $(document).ready(function () {
         cursor: 'default',
         readonly: false,
         change_once: false, // Determines if the rating can only be set once
-        ajax_method: 'POST',
         additional_data: {} // Additional data to send to the server
     };
 
     $(".rating").rate(options);
 
-    $(".sendComment").click(function () {
+
+    var rating;
+    $(".rating").on("change", function (ev, data) {
+        console.log(data.to);
+        rating = data.to;
+    });
+
+    $('.sendComment').submit(function (event) {
         console.log("clicked");
-        $(".rating").on("change", function (ev, data) {
-            //console.log(data.to);
-            var rating = data.to;
-            var url = "/test";
-            $.post(url, {
-                rating: rating
-            }).fail(function () {
-                console.log("error");
-            });
+
+        var url = "/food";
+        $.post(url, function () {
+            alert( "success" );
+            //rating: rating
         });
+        event.preventDefault();
     });
 });
