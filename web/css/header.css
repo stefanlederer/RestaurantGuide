@@ -20,11 +20,23 @@
 #search {
 
 }
-input.search {
+
+#search {
     position: absolute;
     left: 40%;
     width: 20%;
     top: 25px;
+}
+input.search {
+    left: 100%;
+    width: 100%;
+}
+div.searchIcon {
+    position: absolute;
+    right: 5px;
+    font-size: 20px;
+    top: 3px;
+    color: #04B431;
 }
 #user {
     position: absolute;

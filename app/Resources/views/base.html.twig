@@ -24,7 +24,8 @@
                 </a>
 
                 <div id="search">
-                    <input class="search" type="search" name="search" placeholder="Suche...">
+                    <input class="search" id="searchRestaurant" type="search" name="search" placeholder="Suche...">
+                    <div class="searchIcon"><i class="fa fa-search"></i></div>
                 </div>
                 <a href="{{ path('logout_route') }}">
                     <div id="user">
@@ -52,6 +53,7 @@
     <script type="text/javascript" src="{{ asset('js/rater.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/star-rating.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/routeMap.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/search.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/gmaps.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/googlemapsAPI.js') }}"></script>
 {% endblock %}
