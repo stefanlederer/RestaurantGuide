@@ -17,6 +17,8 @@ $(document).ready(function () {
                 lng: oldlng = e.latLng.lng(),
                 title: 'Ausgewählter Ort'
             });
+            $("#newRestaurantForm").slideDown();
+            $("#slider").removeClass("fa fa-sort-desc").addClass("fa fa-sort-asc");
         }
     });
 });
