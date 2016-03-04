@@ -23,6 +23,7 @@
     left: 40%;
     width: 20%;
     top: 25px;
+    display: none;
 }
 input.search {
     left: 100%;
