@@ -28,8 +28,9 @@ class RestaurantInformationController extends Controller
 
         $request = Request::createFromGlobals();
         $comment = $request->request->get('myComment');
-        $bewertung = $request->request->get('rating');
-        print_r("fdjslkfjdls");
+        $bewertung = $request->request->get('myRating');
+
+        print_r($comment);
         print_r($bewertung);
 
         if (strlen($comment) > 0) {
@@ -38,7 +39,7 @@ class RestaurantInformationController extends Controller
             $rating->setUserId($userId);
             $rating->setPlacesId($placesId);
             $rating->setKommentar($comment);
-//            $rating->setBewertungen($bewertung);
+            $rating->setBewertungen($bewertung);
             $rating->setDate($time);
 
             $em = $this->getDoctrine()->getManager();
@@ -62,7 +63,9 @@ class RestaurantInformationController extends Controller
             'comments' => $comments
         ));
 
-        $response = new Response(json_encode(array()));
+        $response = new Response(json_encode(array(
+
+        )));
         $response->headers->set('Content-Type', 'application/json');
         return $response;
     }

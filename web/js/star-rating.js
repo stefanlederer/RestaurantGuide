@@ -22,19 +22,22 @@ $(document).ready(function () {
         rating = data.to;
     });
 
-    $('.submit-comment').submit(function (event) {
+    $('.submit-comment').submit(function (e) {
+        e.preventDefault();
         var myComment = $('.myComment').val();
         console.log(myComment, " ", rating);
 
+        var url = window.location.href;
+        console.log(url);
+
         $.ajax({
             type: "POST",
-            url: "/food",
+            url: url,
             data: {
                 myComment: myComment,
                 myRating: rating
             },
             success: console.log("success")
         });
-        event.preventDefault();
     });
 });
