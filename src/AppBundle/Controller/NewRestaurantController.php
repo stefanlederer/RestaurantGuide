@@ -37,20 +37,20 @@ class NewRestaurantController extends Controller
 
             $file->move($targetDir, $restaurantImg);
 
-//                $place = new Places();
-//
-//                $place->setName($restaurantName);
-//                $place->setStreet($restaurantStreet);
-//                $place->setStreetnumber($restaurantStreetNumber);
-//                $place->setPlz($restaurantPLZ);
-//                $place->setCity($restaurantplace);
-//                $place->setNorth($north);
-//                $place->setEast($east);
-//                $place->setImage("images/".$restaurantImg);
-//
-//                $em = $this->getDoctrine()->getManager();
-//                $em->persist($place);
-//                $em->flush();
+                $place = new Places();
+
+                $place->setName($restaurantName);
+                $place->setStreet($restaurantStreet);
+                $place->setStreetnumber($restaurantStreetNumber);
+                $place->setPlz($restaurantPLZ);
+                $place->setCity($restaurantplace);
+                $place->setNorth($north);
+                $place->setEast($east);
+                $place->setImage("images/".$restaurantImg);
+
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($place);
+                $em->flush();
 
         }
 
