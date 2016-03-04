@@ -30,8 +30,8 @@
       <file leaf-file-name="NewRestaurantController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/NewRestaurantController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.4594594">
-              <caret line="48" column="54" selection-start-line="48" selection-start-column="54" selection-end-line="48" selection-end-column="54" />
+            <state vertical-scroll-proportion="0.45405406">
+              <caret line="35" column="71" selection-start-line="35" selection-start-column="71" selection-end-line="35" selection-end-column="71" />
               <folding />
             </state>
           </provider>
@@ -789,14 +789,20 @@
       <option name="project" value="LOCAL" />
       <updated>1457115927204</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="[BE] finished upload new Restaurant">
+      <created>1457116014147</created>
+      <option name="number" value="00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1457116014147</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="741" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31268883" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31268883" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295082" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -847,7 +853,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[FE] fixed bugs in routeMap.js for restaurant information in restaurant.html.twig" />
     <MESSAGE value="[FE] added google maps to new Restaurant with set marker function" />
     <MESSAGE value="[FE] added google maps to new Restaurant with set marker function -&gt; update" />
     <MESSAGE value="[FE] designed input type file in newRestaurant.html.twig" />
@@ -872,7 +877,8 @@
     <MESSAGE value="[FE] updated newRestaurant.html.twig get address information of marker and value them in input" />
     <MESSAGE value="[FE] setup security.yml -&gt; access control" />
     <MESSAGE value="[BE] fixed move uploaded file" />
-    <option name="LAST_COMMIT_MESSAGE" value="[BE] fixed move uploaded file" />
+    <MESSAGE value="[BE] finished upload new Restaurant" />
+    <option name="LAST_COMMIT_MESSAGE" value="[BE] finished upload new Restaurant" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1230,8 +1236,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/NewRestaurantController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.4594594">
-          <caret line="48" column="54" selection-start-line="48" selection-start-column="54" selection-end-line="48" selection-end-column="54" />
+        <state vertical-scroll-proportion="0.45405406">
+          <caret line="35" column="71" selection-start-line="35" selection-start-column="71" selection-end-line="35" selection-end-column="71" />
           <folding />
         </state>
       </provider>
