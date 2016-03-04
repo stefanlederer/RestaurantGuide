@@ -170,6 +170,9 @@ button.sendComment {
 button.sendComment:hover {
     background-color: #04B431;
 }
+input.myRating {
+    opacity: 0;
+}
 /*
 Rating System
 */

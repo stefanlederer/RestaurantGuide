@@ -16,19 +16,24 @@ $(document).ready(function () {
     $(".rating").rate(options);
 
 
-    var rating;
+    var rating = "";
     $(".rating").on("change", function (ev, data) {
         console.log(data.to);
         rating = data.to;
     });
 
-    $('.sendComment').submit(function (event) {
-        console.log("clicked");
+    $('.submit-comment').submit(function (event) {
+        var myComment = $('.myComment').val();
+        console.log(myComment, " ", rating);
 
-        var url = "/food";
-        $.post(url, function () {
-            alert( "success" );
-            //rating: rating
+        $.ajax({
+            type: "POST",
+            url: "/food",
+            data: {
+                myComment: myComment,
+                myRating: rating
+            },
+            success: console.log("success")
         });
         event.preventDefault();
     });

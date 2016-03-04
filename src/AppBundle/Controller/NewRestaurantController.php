@@ -21,48 +21,40 @@ class NewRestaurantController extends Controller
         $restaurantStreetNumber = $request->request->get('restaurantstreetnum');
         $restaurantPLZ = $request->request->get('restaurantplz');
         $restaurantplace = $request->request->get('restaurantplace');
-        $restaurantImg = $request->request->get('restaurantImage'); //Filename
         $file = $request->files->get('restaurantImage'); //file
-
-        $north = "56,454646";
-        $east = "25,1546213";
+        $restaurantImg = $file->getClientOriginalName(); //Filename
+        $north = $request->request->get('restaurantlng');
+        $east = $request->request->get('restaurantlat');
 
         //get and proof image upload
-        $targetDir = $this->container->getParameter('kernel.root_dir') . '/../web/images';
-        $targetFile = $targetDir . basename($restaurantImg); //
-        $imageFileType = pathinfo($targetFile, PATHINFO_EXTENSION);
+        $targetDir = $this->get('kernel')->getRootDir() . '/../web/images';
 
+        print_r($restaurantImg);
 
-//        if (strlen($restaurantName) > 0 && strlen($restaurantStreet) > 0 && strlen($restaurantStreetNumber) > 0
-//            && strlen($restaurantPLZ) > 0 && strlen($restaurantplace) > 0 && strlen($north) > 0 && strlen($east) > 0
-//        ) {
+        if (strlen($restaurantName) > 0 && strlen($restaurantStreet) > 0 && strlen($restaurantStreetNumber) > 0
+            && strlen($restaurantPLZ) > 0 && strlen($restaurantplace) > 0 && strlen($north) > 0 && strlen($east) > 0
+        ) {
 
-//        if ($imageFileType = "jpg" && $imageFileType = "png" && $imageFileType = "jpeg"
-//                    && $imageFileType = "gif"
-//        ) {
+            $file->move($targetDir, $restaurantImg);
+
+//                $place = new Places();
 //
-//            $data = $file   ;
-//            if ($data['attachment']->move($targetDir, $restaurantImg)) {
+//                $place->setName($restaurantName);
+//                $place->setStreet($restaurantStreet);
+//                $place->setStreetnumber($restaurantStreetNumber);
+//                $place->setPlz($restaurantPLZ);
+//                $place->setCity($restaurantplace);
+//                $place->setNorth($north);
+//                $place->setEast($east);
+//                $place->setImage("images/".$restaurantImg);
 //
-//            $place = new Places();
-//
-//            $place->setName($restaurantName);
-//            $place->setStreet($restaurantStreet);
-//            $place->setStreetnumber($restaurantStreetNumber);
-//            $place->setPlz($restaurantPLZ);
-//            $place->setCity($restaurantplace);
-//            $place->setNorth($north);
-//            $place->setEast($east);
-//            $place->setImage("images/".$restaurantImg);
-//
-//            $em = $this->getDoctrine()->getManager();
-//            $em->persist($place);
-//            $em->flush();
-//            } else {
-//                print_r("cannot move file");
-//            }
-//        }
+//                $em = $this->getDoctrine()->getManager();
+//                $em->persist($place);
+//                $em->flush();
+
+        }
 
         return $this->render('AppBundle:templates:newRestaurant.html.twig');
+
     }
 }
