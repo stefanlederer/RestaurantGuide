@@ -23,11 +23,9 @@ security:
                 # The name of the route to redirect to after logging out
                 target: homepage
            
-#    access_control:
-#        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-#        - { path: ^/adduser, roles: ROLE_ADMIN }
-#        - { path: ^/usermanagement, roles: ROLE_ADMIN }
-#        - { path: ^/changerole, roles: ROLE_ADMIN }
-#        - { path: ^/, roles: [ROLE_ADMIN, ROLE_USER] }
+    access_control:
+        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/neuesRestaurant, roles: ROLE_USER }
+        - { path: ^/food, roles: ROLE_USER }
 
             
