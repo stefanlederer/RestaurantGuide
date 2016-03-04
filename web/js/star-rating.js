@@ -37,7 +37,19 @@ $(document).ready(function () {
                 myComment: myComment,
                 myRating: rating
             },
-            success: console.log("success")
+            success: success()
         });
     });
 });
+
+function success() {
+    console.log("success");
+    var element = $('.myComment');
+
+    element.val("Vielen Dank für Ihre Bewertung");
+    element.prop("disabled", true);
+    setTimeout(function() {
+        element.prop("disabled", false);
+        element.val(null);
+    },3000);
+}
